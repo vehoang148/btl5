@@ -1,0 +1,66 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container-fluid .row .col-md-3 .position-sticky .nav :hover{
+  background-color: red;
+  border-radius: 8px;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar-brand {
+  background-color: rgb(4, 0, 255);
+  margin-right: 0%;
+}
+
+.navbar-nav{
+  background-color: red;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #000;
+}
+
+.container-fluid{
+  background-color: rgb(255, 255, 255);
+}
+
+.header {
+  background-color: #5900ff; 
+  margin-top: 20px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding: 8px 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-wrapper {
+  border: 1px solid rgba(0, 0, 0, .1);
+  padding: 16px;
+}
+
+.row-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+@media screen and (min-width: 720px) {
+   .row-wrapper {
+    grid-template-columns: 66% 34%;
+  }
+
+  .aside {
+    padding-left: calc(14px * 2); 
+  }
+
+}
+
+
+

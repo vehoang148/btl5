@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài Đặt</title>
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/css/all.min.css">
+    <style>
+
+      .change_password{
+        border: 3px solid greenyellow;
+        width: 400px;
+        height: 400px;
+        margin-top: 80px;
+        margin-left: 15%;
+        background-color: aquamarine;
+        border-radius: 10px;
+      }
+      .change_password h2{
+        text-align: center;
+        color: green;
+        margin-top: 10px;
+      }
+      .change_password input{
+        font-size: 30px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: red;
+        background-color: aquamarine;
+      }
+      .change_password button{
+        margin-top: 30px;
+        font-size: 23px;
+        margin-left: 30%;
+        border-radius: 8px;
+        background-color: blueviolet;
+      }
+      .change_password button:hover{
+        background-color: cadetblue;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+    <i class="fa-solid fa-user-shield"></i>_Admin</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <h3 style="color: white; padding-top: 5px;">Quản Trị</h3>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="./../index.html">Thoát
+        <i class="fa-solid fa-share"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/admin.html">
+              <span data-feather="file" class="align-text-bottom"></span>
+              <i class="fa-solid fa-house-user"></i>
+              Quản Trị Viên
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/donhang.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span data-feather="file" class="align-text-bottom"></span>
+              Quản Lý Đơn Hàng
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/sanpham.html">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa-solid fa-briefcase"></i>
+              Quản Lý Sản Phẩm
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/khachhang.html">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa-solid fa-user-gear"></i>
+              Quản Lý Khách Hàng
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/doitac.html">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa-solid fa-handshake"></i>
+              Quản Lý Đối Tác
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/doimatkhau.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa-solid fa-envelope-circle-check"></i>
+              Tin Nhắn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/doimatkhau.html">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              <i class="fa-solid fa-gears"></i>
+              Đổi Mật Khẩu
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <form class="change_password" onsubmit="password()" >
+  <div class="container">
+    <h2>ĐỔI MẬT KHẨU</h2>
+    <input id="email-change" type="email" placeholder="Email" required>
+    <input id="password1" type="password"  placeholder="Mật Khẩu Cũ" required>
+    <input id="password2" type="password" placeholder="Mật Khẩu Mới" required>
+    <button id="btn-change">Đổi Mật Khẩu</button>
+  </div>
+</form>
+</div>
+   <script>
+    function password(e){
+    event.preventDefault();
+    var email = document.getElementById("email-change").value;
+    var password1 =document.getElementById("password1").value;
+    var password2 = document.getElementById("password2").value;
+    var user = {
+        email:email,
+        password2:password2,
+    };
+    var json = JSON.stringify(user);
+    if(email != json.email && password2 != json.password2)
+    {
+      localStorage.setItem(email, json);
+      alert("Đổi mật khẩu thành công !"); 
+    } 
+}
+   </script>
+    <script src="../js/bootstrap.js"></script>
+  </body>
+</html>

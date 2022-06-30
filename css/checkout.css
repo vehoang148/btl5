@@ -1,0 +1,26 @@
+html{
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  background: linear-gradient(40deg,rgb(0, 255, 85),rgb(255, 187, 0));
+}
+.container .py-3 .fa-solid{
+  float: right;
+  font-size: 35px;
+  margin-top: 10px;
+  color: rgb(97, 5, 5);
+}
+.container .py-3 .fa-solid:hover{
+  color: aqua;
+}
+.mb-3{
+  margin-top: 10px;
+}
+.my-3 {
+  margin-left: 20px;
+}
+.container-fluid {
+  margin-top: 50px;
+  margin-left: 30%;
+}
+

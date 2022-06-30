@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG NHẬP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sign-in.css">
+    <link rel="stylesheet" href="css//bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="font/css/all.min.css">
+  </head>
+
+<body class="text-center">
+<main class="form-signin w-100 m-auto">
+  <form onsubmit="signIn()">
+    <div class="close">
+      <a href="index.html"><button type="button" class="btn-close"></button></a>
+    </div>
+    
+    <h1 class="h3 mb-3 fw-normal">Đăng Nhập</h1>
+    <div class="form-floating">
+      <input id="tb-email-login" type="email" class="form-control"  placeholder="name@example.com" required>
+      <label for="Email-signIn">Email</label>
+    </div>
+    <div class="form-floating">
+      <input id="tb-password-login" type="password" class="form-control"  placeholder="Password" required>
+      <label for="Password-signIn">Mật Khẩu</label>
+    </div>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me">Nhớ Tài Khoản
+      </label>
+    </div>
+    <button id="login-btn" class="w-100 btn btn-lg btn-primary" type="submit">Đăng Nhập</button>
+    <p></p>
+    <a href="sign-up.html" style="text-decoration: none;font-size: 18px;">Đăng Ký</a>
+  </form>
+</main>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+  //phần đăng nhập
+  function signIn(e)
+{
+    event.preventDefault();
+    var email = document.getElementById("tb-email-login").value;
+    var password = document.getElementById("tb-password-login").value;
+    var user = localStorage.getItem(email);
+    var data = JSON.parse(user);
+    if(user == null || password == null)
+    {
+        alert("Tài Khoản Chưa Đăng Ký !");
+    }
+    //tk dùng để đăng nhập quản lý
+    else if(email == "admin@gmail.com" && password == "123" 
+          || email == "admin1@gmail.com" && password == "123"
+          || email == "admin2@gmail.com" && password == "123")
+    {
+      alert("Đăng Nhập Quản Trị Thành Công !");
+      window.location.href = "./dashboard/admin.html";
+    }
+    //đăng nhập khách hàng
+    else if(email == data.email && password == data.password)
+    {
+        alert("Đăng Nhập Thành Công !");
+        window.location.href = "index.html";
+    } 
+}
+</script>
+</body>
+</html>

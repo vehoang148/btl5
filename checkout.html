@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THANH TOÁN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="font/css/all.min.css">
+  </head>
+
+  <body>
+<div class="container">
+  <main>
+    <div class="py-3 text-center">
+      <a href="cart.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+      <h2 style="color: blue;">Thanh Toán</h2>  
+    </div>
+    <div class="row g-4">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Giỏ Hàng Của Bạn</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">HP Spectre x360 (2022)</h6>
+            </div>
+            <span class="text-muted">25.000.000đ</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Acer Swift 3</h6>
+            </div>
+            <span class="text-muted">20.000.000đ</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <div class="text-success">
+              <h6 class="my-0">Khuyến Mại</h6>
+            </div>
+            <span class="text-success">-500.000đ</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Tổng Tiền</span>
+            <strong>44.500.000đ</strong>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Thông Tin Khách Hàng</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="firstName" class="form-label">Tên</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            </div>
+            <div class="col-12">
+              <label for="email" class="form-label">Email<span class="text-muted"></span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@gmail.com" required>
+            </div>
+            <div class="col-12">
+              <label for="phone" class="form-label">Số điện thoại<span class="text-muted"></span></label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="col-12">
+              <label for="address" class="form-label">Địa Chỉ</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Hà Nội" required>
+            </div>
+            <br>
+            <hr>
+          <h4 class="mb-3">Thanh toán</h4>
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Nhận hàng thanh toán</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">Chuyển Khoản</label>
+            </div>
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Họ Và Tên</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="VD: Hoàng Đình Dũng" required>
+              </div>
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Ngân Hàng</label>
+                <input type="text" class="form-control" id="cc-nganhang" placeholder="VD: VietinBank" required>
+              </div>
+          </div>
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Số Thẻ Ngân Hàng</label>
+                <input type="text" class="form-control" id="cc-the" placeholder="VD: 123456789" required>
+              </div>
+          </div>
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" id="btn-thanhtoan" type="submit">Thanh Toán</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <section class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2022 All Rights Reserved By
+      <a href="">Nhóm 5</a>
+    </p>
+  </section>
+</div>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>

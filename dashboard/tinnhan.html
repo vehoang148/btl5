@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Nhắn</title>
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/css/all.min.css">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+    <i class="fa-solid fa-user-shield"></i>_Admin</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <h3 style="color: white; padding-top: 5px;">Quản Lý</h3>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="./../index.html">Thoát
+        <i class="fa-solid fa-share"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/admin.html">
+              <span data-feather="file" class="align-text-bottom"></span>
+              <i class="fa-solid fa-house-user"></i>
+              Quản Trị Viên
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/donhang.html">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa-solid fa-cart-shopping"></i>
+              Quản Lý Đơn Hàng
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/sanpham.html">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa-solid fa-briefcase"></i>
+              Quản Lý Sản Phẩm
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/khachhang.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa-solid fa-user-gear"></i>
+              Quản Lý Khách Hàng
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/doitac.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa-solid fa-handshake"></i>
+              Quản Lý Đối Tác
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/tinnhan.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa-solid fa-envelope-circle-check"></i>
+              Tin Nhắn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/doimatkhau.html">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              <i class="fa-solid fa-gears"></i>
+              Đổi Mật Khẩu
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <body>
+      <div class="container">
+        <div class="row-wrapper">
+          <div class="">
+            <div class="header text-center">
+              DANH SÁCH TIN NHẮN
+            </div>
+            <div class="mt-2"> 
+              <input type="text" placeholder="Tìm Kiếm Theo Tên" id="search-input" class="form-check-inline" required>
+              <button onclick="search()" class="btn btn-dark" style="margin-left: 1%;width: 100px;font-size: 12px;" >Tìm Kiếm</button>
+            </div>
+            <table class="table table-bordered mt-2" id="render">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Mã</th>
+                  <th>Tên</th>
+                  <th>Số Điện Thoại</th>
+                  <th>Địa Chỉ</th>
+                  <th>Nội Dung</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-bordered mt-2" id="renderSearch" style="display: none;">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Mã</th>
+                  <th>Tên</th>
+                  <th>Số Điện Thoại</th>
+                  <th>Địa Chỉ</th>
+                  <th>Nội Dung</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="aside">
+            <div class="header">
+              THÔNG TIN VỀ TIN NHẮN
+            </div>
+            <form id="form-car" class="form-wrapper">
+              <div class="mb-3">
+                <label for="form-id" class="form-label fw-semibold">Mã:</label>
+                <input type="text" class="form-control" id="form-id" required>
+              </div>
+              <div class="mb-3">
+                <label for="form-name" class="form-label fw-semibold">Tên:</label>
+                <input type="text" class="form-control" id="form-name" required>
+              </div>
+              <div class="mb-3">
+                <label for="form-phone" class="form-label fw-semibold">Số Điện Thoại:</label>
+                <input type="text"  class="form-control" id="form-phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="form-address" class="form-label fw-semibold">Địa Chỉ:</label>
+                <input type="text" class="form-control" id="form-address" required>
+              </div>
+              <div class="mb-3">
+                <label for="form-content" class="form-label fw-semibold">Nội Dung:</label>
+                <input type="text" class="form-control" id="form-content" required>
+              </div>
+              <button  onclick="add()" class="btn btn-primary" style="width: 100%;">Thêm</button>
+              <p></p>
+              <button  onclick="render()" class="btn btn-danger" style="width: 100%;">Tạo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/dashboard/QL_TinNhan.js">
+  </script>
+  </body>
+</html>

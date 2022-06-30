@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG KÝ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <style>
+      body{
+        background: linear-gradient(red,blue);
+      }
+      .modal-content{
+        background: linear-gradient(40deg,rgb(255, 7, 222),rgb(208, 255, 1));
+      }
+    </style>
+</head>
+
+<body>
+    <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              
+              <h1 class="fw-bold mb-0">ĐĂNG KÝ</h1>
+              <a href="index.html"><button type="button" class="btn-close"></button></a>
+            </div>
+      
+            <div class="modal-body p-5 pt-0" >
+              <form class="" onsubmit="signUp()">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control rounded-3" id="Email-SignUp" placeholder="name@example.com" required>
+                  <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control rounded-3" id="Password-SignUp" placeholder="Password" required>
+                  <label for="floatingPassword">Mật Khẩu</label>
+                </div>
+                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Đăng Ký</button>
+                <ul class="navbar-nav" style="margin-left: 30%;color: rgb(60, 9, 201);">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="sign-in.html" style="font-size: 20px; margin-left: 13%;">Đăng Nhập</a>
+                  </li>
+                </ul>
+                <hr>
+                <h2 class="fs-5 fw-bold mb-3">Sử Dụng Bên Thứ 3</h2>
+                <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+                  <svg class="bi me-1" width="16" height="16"><use/></svg>
+                  Đăng Ký Bằng Facebook
+                </button>
+                <button class="w-100 py-2 mb-2 btn btn-outline-success rounded-3" type="submit">
+                  <svg class="bi me-1" width="16" height="16"><use/></svg>
+                  Đăng Ký Bằng Google
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+<script>
+   function signUp(e){
+
+    event.preventDefault();
+    var email = document.getElementById("Email-SignUp").value;
+    var password = document.getElementById("Password-SignUp").value;
+    var user = {
+        email:email,
+        password:password
+    };
+    var json = JSON.stringify(user);
+    if(email == json.email || password == json.password)
+    {
+      alert("Tài khoản này đã tồn tại !");
+    }
+    else if(email != json.email && password != json.password)
+    {
+      localStorage.setItem(email, json);
+      alert("Đăng ký thành công !");  
+    }
+}
+</script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.min.js"></script>
+</body>
+</html>
